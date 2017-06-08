@@ -1,0 +1,32 @@
+{
+  "name": "eversign",
+  "version": "1.0.0",
+  "description": "Nodejs client for eversign api",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --timeout 15000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eversign/eversign-node-sdk/eversign-node-sdk.git"
+  },
+  "keywords": [
+    "eversign"
+  ],
+  "author": "Patrick Leeb",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eversign/eversign-node-sdk/issues"
+  },
+  "homepage": "https://github.com/eversign/eversign-node-sdk#README",
+  "dependencies": {
+    "async": "^2.4.1",
+    "bluebird": "^3.5.0",
+    "request": "^2.81.0",
+    "request-debug": "^0.2.0"
+  },
+  "devDependencies": {
+    "chai": "^4.0.0",
+    "chai-as-promised": "^6.0.0"
+  }
+}
