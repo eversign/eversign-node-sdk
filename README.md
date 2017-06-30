@@ -11,9 +11,8 @@ eversign Node.js SDK is the official Node Wrapper around the eversign [API](http
 
 Install from npm:
 ````sh
-npm install eversign-node-sdk
-cd node_modules/eversign-node-sdk
-npm install
+cd your_project
+npm install eversign
 ````
 
 Install from code:
