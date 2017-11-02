@@ -49,6 +49,12 @@ client.fetchBusinesses().then(function (businesses) {
 });
 ````
 
+If you know the `businessId` beforehand you can also set it with `setSelectedBusinessById(businessId)`
+
+```javascript
+client.setSelectedBusinessById(1337);
+```
+
 ### Create document from template [Method: Use Template]
 To create a document based on an already created template you can use the class `DocumentTemplate`. In order to identify which template should be used, please pass the template's ID into the `setTemplateId("MY_TEMPLATE_ID")` function.
 
