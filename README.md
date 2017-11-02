@@ -29,11 +29,11 @@ All eversign API requests are made using the `Client` class, which contains all 
 
 Please also specify the ID of the eversign business you would like this API request to affect. [Where is my Business ID?](https://eversign.com/api/documentation/intro#business-selection)
 
-In your Node application, require `eversign-node-sdk` (or the path to the sdk folder if not using npm) and pass authentication information to initialize it:
+In your Node application, require `eversign` (or the path to the sdk folder if not using npm) and pass authentication information to initialize it:
 
 ````javascript
 // Initialize using api key
-var Client = require('eversign-node-sdk').Client;
+var Client = require('eversign').Client;
 var client = new Client("MY_HASH", 12345678);
 ````
 
