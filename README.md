@@ -39,10 +39,13 @@ var client = new Client("MY_HASH", 12345678);
 
 ### Fetch businesses
 Using the `getBusinesses()` function all businesses on the eversign account will be fetched and listed along with their Business IDs.
+You can also set the selected business with a call to `client.setSelectedBusiness(Business)`
 
 ````javascript
 client.fetchBusinesses().then(function (businesses) {
   console.log(businesses[0].getBusinessId());
+
+  client.setSelectedBusiness(businesses[0]);
 });
 ````
 
