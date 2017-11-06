@@ -25,6 +25,8 @@ http.createServer(function(request, response) {
     document.setTitle("Tile goes here");
     document.setRequesterEmail("tester@gmail.com");
     document.setIsDraft(false);
+    document.setRedirect('https://eversign.com/?success');
+    document.setRedirectDecline('https://eversign.com/?declined');
 
     // Enable embedded signing
     document.setEmbeddedSigningEnabled(true);

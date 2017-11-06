@@ -15,6 +15,8 @@ var document = new Document();
 document.setTitle("Tile goes here");
 document.setRequesterEmail("tester@gmail.com");
 document.setIsDraft(false);
+document.setRedirect('https://eversign.com/?success');
+document.setRedirectDecline('https://eversign.com/?declined');
 
 var recipient = new Recipient();
 recipient.setName("Tester Test");

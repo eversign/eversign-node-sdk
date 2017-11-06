@@ -12,7 +12,9 @@ var client = new Client(config.accessKey, config.businessId);
 var documentTemplate = new Template();
 documentTemplate.setTemplateId(config.templateId);
 documentTemplate.setTitle('Form Test');
-documentTemplate.setMessage('Test Message ');
+documentTemplate.setMessage('Test Message');
+documentTemplate.setRedirect('https://eversign.com/?success');
+documentTemplate.setRedirectDecline('https://eversign.com/?declined');
 
 // Create a signer for the document via the role specified in the template
 var signer = new Signer();

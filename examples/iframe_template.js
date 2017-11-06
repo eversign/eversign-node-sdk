@@ -24,7 +24,9 @@ http.createServer(function(request, response) {
     var documentTemplate = new Template();
     documentTemplate.setTemplateId(config.templateId);
     documentTemplate.setTitle('Form Test');
-    documentTemplate.setMessage('Test Message ');
+    documentTemplate.setMessage('Test Message');
+    documentTemplate.setRedirect('https://eversign.com/?success');
+    documentTemplate.setRedirectDecline('https://eversign.com/?declined');
 
     // Enable embedded signing
     documentTemplate.setEmbeddedSigningEnabled(true);
