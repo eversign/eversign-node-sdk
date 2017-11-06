@@ -1,0 +1,25 @@
+
+<script type="text/javascript" src="https://s3.amazonaws.com/eversign-embedded-js-library/eversign.embedded.latest.js"></script>
+<div id="container"></div>
+<script>
+eversign.open({
+    url: signingUrl,
+    containerID: 'container',
+    width: 600,
+    height: 600,
+    events: {
+        loaded: function () {
+            alert('loaded callback');
+        },
+        signed: function () {
+            alert('signed callback');
+        },
+        declined: function () {
+            alert('declined callback');
+        },
+        error: function () {
+            alert('error callback');
+        }
+    }
+});
+</script>
