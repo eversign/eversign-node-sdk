@@ -2,7 +2,9 @@
 
 var Client = require('../index').Client;
 
-var client = new Client("MY_HASH", 123456);
+var config = require('./config');
+
+var client = new Client(config.accessKey, config.businessId);
 
 client.fetchBusinesses().then(function (businesses) {
   console.log(businesses[0].getBusinessId());

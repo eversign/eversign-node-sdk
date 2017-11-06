@@ -3,10 +3,12 @@
 var Client = require('../index').Client;
 var Document = require('../index').Document;
 
-var client = new Client("MY_HASH", 123456);
+var config = require('./config');
+
+var client = new Client(config.accessKey, config.businessId);
 
 client.getAllDocuments().then(function (documents) {
-  client.downloadRawDocumentToPath(completed[0], "./doc.pdf").then(function (res) {
-    console.log(res);
+  client.downloadRawDocumentToPath(documents[0], "./raw.pdf").then(function (res) {
+    console.log('done!');
   });
 });

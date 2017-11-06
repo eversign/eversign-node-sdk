@@ -7,7 +7,9 @@ var Document = require('../index').Document;
 var File = require('../index').File;
 var SignatureField = require('../index').SignatureField;
 
-var client = new Client("MY_HASH", 12345678);
+var config = require('./config');
+
+var client = new Client(config.accessKey, config.businessId);
 
 var document = new Document();
 document.setTitle("Tile goes here");
@@ -22,12 +24,12 @@ document.appendRecipient(recipient);
 
 var signer = new Signer();
 signer.setName('Tester Test');
-signer.setEmail('tester@gmail.com')
+signer.setEmail(config.signerEmail)
 document.appendSigner(signer);
 
 var file = new File({
   name: 'My File',
-  filePath: './placeholder.pdf',
+  filePath: './raw.pdf',
 });
 document.appendFile(file);
 
@@ -40,4 +42,10 @@ signatureField.setRequired(true);
 signatureField.setSigner("1");
 document.appendFormField(signatureField);
 
-client.createDocument(document);
+client.createDocument(document).then(function(doc) {
+
+    console.log(doc.getDocumentHash());
+})
+.catch(function(err) {
+    console.log(err);
+})

@@ -35,4 +35,6 @@ build/
 *.sublime-project
 *.sublime-workspace
 
-
+examples/config.js
+examples/raw.pdf
+examples/final.pdf
