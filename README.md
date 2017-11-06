@@ -6,6 +6,7 @@ eversign Node.js SDK is the official Node Wrapper around the eversign [API](http
   - [Create Document Example](/examples/create_document.js)
   - [Download Document Example](/examples/download_document.js)
   - [Get Documents Example](/examples/get_documents.js)
+  - [Document Operations](/example/document_operations)
 
 ## Installation
 
