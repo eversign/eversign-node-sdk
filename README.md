@@ -4,10 +4,10 @@ eversign Node.js SDK is the official Node Wrapper around the eversign [API](http
 
 **Quick Links:**
   - [Create Document Example](/examples/create_document.js)
-  - [Use Template Example](/example/create_document_from_template.js)
-  - [Document Operations](/example/document_operations.js)
-  - [Create Iframe Signature](/example/iframe.js)
-  - [Create Iframe Signature From Template](/example/iframe_template.js)
+  - [Use Template Example](/examples/create_document_from_template.js)
+  - [Document Operations](/examples/document_operations.js)
+  - [Create Iframe Signature](/examples/iframe.js)
+  - [Create Iframe Signature From Template](/examples/iframe_template.js)
 
 ## Installation
 
