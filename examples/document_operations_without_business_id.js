@@ -5,10 +5,8 @@ var Document = require('../index').Document;
 
 var config = require('./config');
 
-var client = new Client(config.accessKey, config.businessId);
+var client = new Client(config.accessKey);
 
 client.getAllDocuments().then(function (documents) {
-  client.downloadRawDocumentToPath(documents[0], "./raw.pdf").then(function (res) {
-    console.log('done!');
-  });
+    console.log(documents.length, ' documents found');
 });
