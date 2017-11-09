@@ -21,4 +21,5 @@ module.exports = {
   Signer: require('./lib/Signer'),
   TextField: require('./lib/TextField'),
   TextFormField: require('./lib/TextFormField'),
+  OAuthTokenRequest: require('./lib/OAuthTokenRequest'),
 };
