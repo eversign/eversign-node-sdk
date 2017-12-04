@@ -65,7 +65,7 @@ http.createServer(function(request, response) {
         });
     })
     .catch(function(err) {
-        console.log(err);
+        console.log('ERROR CREATING DOC', err);
     });
 }).listen(8080, function() {
     console.log('server running at\n  => http://localhost:8080/\nCTRL + C to shutdown');
