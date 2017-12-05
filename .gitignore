@@ -38,3 +38,5 @@ build/
 examples/config.js
 examples/raw.pdf
 examples/final.pdf
+
+package-lock.json

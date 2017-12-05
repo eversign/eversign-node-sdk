@@ -17,8 +17,8 @@ client.getDocumentByHash(config.documentHash).then(function(doc) {
     console.log(doc.getDocumentHash());
 
     // download said document
-    client.downloadFinalDocumentToPath(doc, './final.pdf', true);
-    client.downloadRawDocumentToPath(doc, './raw.pdf');
+    client.downloadFinalDocumentToPath(doc, __dirname + '/final.pdf', true);
+    client.downloadRawDocumentToPath(doc, __dirname + '/raw.pdf');
 
     // send a reminder for a signer
     var signers = doc.getSigners();

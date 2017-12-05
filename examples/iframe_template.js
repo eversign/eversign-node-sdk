@@ -49,7 +49,7 @@ http.createServer(function(request, response) {
         var signingUrl = doc.getSigners()[0].getEmbeddedSigningUrl();
         console.log('signingUrl generated: ' + signingUrl);
 
-        fs.readFile('iframe.html', 'utf8', function(err, file) {
+        fs.readFile(__dirname + '/iframe.html', 'utf8', function(err, file) {
             file = '<script>var signingUrl = "' + signingUrl + '";</script>' + file;
             response.writeHead(200);
             response.write(file);

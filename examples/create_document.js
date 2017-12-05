@@ -31,7 +31,7 @@ document.appendSigner(signer);
 
 var file = new File({
   name: 'My File',
-  filePath: './raw.pdf',
+  filePath: __dirname + '/raw.pdf',
 });
 document.appendFile(file);
 

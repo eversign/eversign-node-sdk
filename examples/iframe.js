@@ -38,7 +38,7 @@ http.createServer(function(request, response) {
 
     var file = new File({
       name: 'My File',
-      filePath: './raw.pdf',
+      filePath: __dirname + '/raw.pdf',
     });
     document.appendFile(file);
 
@@ -52,7 +52,7 @@ http.createServer(function(request, response) {
     document.appendFormField(signatureField);
 
     client.createDocument(document).then(function(doc) {
-        fs.readFile('iframe.html', 'utf8', function(err, file) {
+        fs.readFile(__dirname + '/iframe.html', 'utf8', function(err, file) {
 
             var signingUrl = doc.getSigners()[0].getEmbeddedSigningUrl();
             console.log('signingUrl generated: ' + signingUrl);

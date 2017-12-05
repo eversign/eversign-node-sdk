@@ -207,3 +207,11 @@ client.cancelDocument(document);
 
 ### Contact us
 Any feedback? Please feel free to [contact our support team](https://eversign.com/contact).
+
+
+### Development
+```
+docker run -ti --rm -p 8080:8080 -v $(pwd):/opt/sdk -w /opt/sdk node bash
+npm install
+node examples/create_document.js
+```
