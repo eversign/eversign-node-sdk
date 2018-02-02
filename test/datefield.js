@@ -21,7 +21,7 @@ describe("DateSignedField", function () {
     
     var document = new Document();
     document.setDocumentHash("My Document");
-    document.setTitle("Tile goes here");
+    document.setTitle("Datefield Test");
     document.setRequesterEmail("tester@gmail.com");
     document.setIsDraft(false);
 
