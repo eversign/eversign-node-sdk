@@ -9,6 +9,8 @@ var client = new Client(config.accessKey, config.businessId);
 
 client.getAllDocuments().then(function (documents) {
     console.log(documents.length, ' documents found');
+}).catch(function(err) {
+    console.log(err)
 });
 
 
@@ -32,10 +34,14 @@ client.getDocumentByHash(config.documentHash).then(function(doc) {
     }
 
     // cancel a document
-    client.cancelDocument(doc);
+    client.cancelDocument(doc).catch(function(err) {
+        console.log(err)
+    });
 
     // delete a doc
-    client.deleteDocument(document);
+    client.deleteDocument(doc).catch(function(err) {
+        console.log(err)
+    });
 
 }).catch(function(err) {
     console.log(err)
