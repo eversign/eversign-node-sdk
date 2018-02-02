@@ -21,7 +21,7 @@ describe("CheckboxField", function () {
     
     var document = new Document();
     document.setDocumentHash("My Document");
-    document.setTitle("Tile goes here");
+    document.setTitle("Title goes here");
     document.setRequesterEmail("tester@gmail.com");
     document.setIsDraft(false);
 
@@ -89,7 +89,7 @@ describe("CheckboxField", function () {
 
     var document = new Document();
     document.setDocumentHash("My Document");
-    document.setTitle("Title goes here");
+    document.setTitle("Checkbox Test");
     document.setRequesterEmail("tester@gmail.com");
     document.setIsDraft(true);
 
@@ -109,6 +109,9 @@ describe("CheckboxField", function () {
     checkbox.setValue("1");
     checkbox.setX(30);
     checkbox.setY(30);
+    checkbox.setSigner("1");
+    checkbox.setPage(1);
+    document.appendFormField(checkbox);
 
     var client = new Client(hash, businessId);
 
