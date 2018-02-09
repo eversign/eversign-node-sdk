@@ -10,10 +10,10 @@ var Signer = require('../lib/Signer');
 var Document = require('../lib/Document');
 var DropdownField = require('../lib/DropdownField');
 var path = require('path');
+var config = require('../examples/config');
 
-var hash = "MYHASH";
-var businessId = 1234;
-
+var key = config.accessKey;
+var businessId = config.businessId;
 
 describe("DropdownField", function () {
 
@@ -111,7 +111,7 @@ describe("DropdownField", function () {
     dropdownField.setSigner("1");
     document.appendFormField(dropdownField);
 
-    var client = new Client(hash, businessId);
+    var client = new Client(key, businessId);
 
     client.createDocument(document).then(function(doc) {
       expect( doc.toObject() ).to.be.an.instanceof(Document);
