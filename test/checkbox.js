@@ -10,10 +10,10 @@ var Signer = require('../lib/Signer');
 var Document = require('../lib/Document');
 var CheckboxField = require('../lib/CheckboxField');
 var path = require('path');
+var config = require('../examples/config');
 
-var hash = "MYHASH";
-var businessId = 1234;
-
+var key = config.accessKey;
+var businessId = config.businessId;
 
 describe("CheckboxField", function () {
 
@@ -113,7 +113,7 @@ describe("CheckboxField", function () {
     checkbox.setPage(1);
     document.appendFormField(checkbox);
 
-    var client = new Client(hash, businessId);
+    var client = new Client(key, businessId);
 
     client.createDocument(document).then(function(doc) {
       expect( doc.toObject() ).to.be.an.instanceof(Document);

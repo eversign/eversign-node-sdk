@@ -10,10 +10,10 @@ var File = require('../lib/File');
 var Signer = require('../lib/Signer');
 var Document = require('../lib/Document');
 var path = require('path');
+var config = require('../examples/config');
 
-var hash = "MYHASH";
-var businessId = 1234;
-
+var key = config.accessKey;
+var businessId = config.businessId;
 
 describe("Client.getAllDocuments", function () {
 
@@ -21,7 +21,7 @@ describe("Client.getAllDocuments", function () {
 
   it('should give an array of documents', function(done){
     
-    var client = new Client(hash, businessId);
+    var client = new Client(key, businessId);
 
     client.getAllDocuments().then(function (documents) {
       documents.should.be.an('array');
@@ -93,7 +93,7 @@ describe('Document' , function functionName() {
     signer.setEmail('tester@gmail.com')
     document.appendSigner(signer.toObject());
 
-    var client = new Client(hash, businessId);
+    var client = new Client(key, businessId);
     client.createDocument(document)
       .then(function (response) {
         expect( document.toObject() ).to.be.an.instanceof(Document);
@@ -121,7 +121,7 @@ describe('Document' , function functionName() {
       });
       document.appendFile(file);
 
-      var client = new Client(hash, businessId);
+      var client = new Client(key, businessId);
       client.createDocument(document)
         .then(function (response) {
           expect( document.toObject() ).to.be.an.instanceof(Document);
