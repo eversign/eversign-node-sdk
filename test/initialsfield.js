@@ -8,7 +8,7 @@ var Client = require('../lib/Client');
 var File = require('../lib/File');
 var Signer = require('../lib/Signer');
 var Document = require('../lib/Document');
-var SignatureField = require('../lib/SignatureField');
+var InitialsField = require('../lib/InitialsField');
 var path = require('path');
 var config = require('../examples/config');
 
@@ -16,7 +16,7 @@ var key = config.accessKey;
 var businessId = config.businessId;
 
 
-describe("SignatureField", function () {
+describe("InitialsField", function () {
 
   it('should get added to a Document without a problem', function(done){
     
@@ -32,15 +32,15 @@ describe("SignatureField", function () {
     });
     document.appendFile(file);
 
-    var signatureField = new SignatureField();
-    signatureField.setX(30);
-    signatureField.setY(30);
-    signatureField.setWidth(200);
-    signatureField.setHeight(50);
-    signatureField.setRequired(true);
-    signatureField.setPage("1");
-    signatureField.setSigner("1");
-    document.appendFormField(signatureField);
+    var initialsField = new InitialsField();
+    initialsField.setX(30);
+    initialsField.setY(30);
+    initialsField.setWidth(200);
+    initialsField.setHeight(50);
+    initialsField.setRequired(true);
+    initialsField.setPage("1");
+    initialsField.setSigner("1");
+    document.appendFormField(initialsField);
 
     expect(document.toObject()).to.have.property('fields').and.have.length(1); // Success
     done();
@@ -52,7 +52,7 @@ describe("SignatureField", function () {
 
     var document = new Document();
     document.setDocumentHash("My Document");
-    document.setTitle("SignatureField Test");
+    document.setTitle("InitialsField Test");
     document.setRequesterEmail("tester@gmail.com");
     document.setIsDraft(true);
 
@@ -67,15 +67,15 @@ describe("SignatureField", function () {
     });
     document.appendFile(file);
 
-    var signatureField = new SignatureField();
-    signatureField.setX(30);
-    signatureField.setY(30);
-    signatureField.setWidth(200);
-    signatureField.setHeight(50);
-    signatureField.setRequired(true);
-    signatureField.setPage("1");
-    signatureField.setSigner("1");
-    document.appendFormField(signatureField);
+    var initialsField = new InitialsField();
+    initialsField.setX(30);
+    initialsField.setY(30);
+    initialsField.setWidth(200);
+    initialsField.setHeight(50);
+    initialsField.setRequired(true);
+    initialsField.setPage("1");
+    initialsField.setSigner("1");
+    document.appendFormField(initialsField);
 
     var client = new Client(key, businessId);
 
