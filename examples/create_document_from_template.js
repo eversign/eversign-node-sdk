@@ -12,6 +12,7 @@ var client = new Client(config.accessKey, config.businessId);
 var documentTemplate = new Template();
 documentTemplate.setTemplateId(config.templateId);
 documentTemplate.setTitle('Form Test');
+// documentTemplate.setSandbox(true);
 documentTemplate.setMessage('Test Message');
 documentTemplate.setRedirect('https://eversign.com/?success');
 documentTemplate.setRedirectDecline('https://eversign.com/?declined');

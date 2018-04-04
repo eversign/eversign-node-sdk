@@ -12,6 +12,7 @@ var config = require('./config');
 var client = new Client(config.accessKey, config.businessId);
 
 var document = new Document();
+// document.setSandbox(true);
 document.setTitle("Tile goes here");
 document.setRequesterEmail("tester@gmail.com");
 document.setIsDraft(false);
