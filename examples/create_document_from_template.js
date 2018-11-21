@@ -14,6 +14,8 @@ documentTemplate.setTemplateId(config.templateId);
 documentTemplate.setTitle('Form Test');
 // documentTemplate.setSandbox(true);
 documentTemplate.setMessage('Test Message');
+documentTemplate.setCustomRequesterName('Joe Requester');
+documentTemplate.setCustomRequesterName('joe@test.com');
 documentTemplate.setRedirect('https://eversign.com/?success');
 documentTemplate.setRedirectDecline('https://eversign.com/?declined');
 
