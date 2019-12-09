@@ -148,7 +148,7 @@ document.appendFile(file);
 
 There is a number of fields that can be added to a document, each coming with different options and parameters. ([Viel Full list of fields »](https://eversign.com/api/documentation/fields))
 
-A field is appended to the document using the `appendFormField(signatureField)` method. Please not that you can set the file that the Field should be added to with the `setFileIndex` method of the FormField.
+A field is appended to the document using the `appendFormField(signatureField)` method. Please note that you can set the file that the Field should be added to with the `setFileIndex` method of the FormField.
 
 Signature and Initials fields are required to be assigned to a specific signer. Fields are assigned to a signer by passing the **Signer ID** into the `setSigner()` function.
 
