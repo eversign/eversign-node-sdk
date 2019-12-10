@@ -979,7 +979,7 @@ declare module 'eversign/lib/OAuthTokenRequest' {
 
 declare module 'eversign/lib/Readable' {
     class Readable {
-        getReadOnly(): Readable.IObject['readOnly']
+        getreadOnly(): Readable.IObject['readOnly']
         setReadOnly(readOnly: Readable.IObject['readOnly']): void
     }
     namespace Readable {
