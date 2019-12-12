@@ -98,11 +98,13 @@ declare module 'eversign/lib/Client' {
         /**
          * Downloads the raw Document to the specified Path.
          * Returns true if saving was successful, otherwise false
-         * @param  {Document} Document [description]
-         * @param  {String} path    [description]
-         * @return {Promise}          [description]
          */
         public downloadRawDocumentToPath(document: Document, path: string): Promise<boolean>
+
+        /**
+         * Return a timed url to download the requested Document.
+         */
+        public getDocumentDownloadUrl(documentId: string, auditTrail?: boolean, type?: "download_final_document" | "download_raw_document"): Promise<string>
         /**
          *
          */
