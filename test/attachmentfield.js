@@ -19,7 +19,7 @@ var businessId = config.businessId;
 describe("AttachmentField", function () {
 
   it('should get added to a Document without a problem', function(done){
-    
+
     var document = new Document();
     document.setDocumentHash("My Document");
     document.setTitle("Title goes here");
@@ -48,11 +48,11 @@ describe("AttachmentField", function () {
 
 
   it('should get uploaded without an error', function(done){
-    this.timeout(10000); 
+    this.timeout(10000);
 
     var document = new Document();
     document.setDocumentHash("My Document");
-    document.setTitle("AttachmentField Test");
+    document.setTitle("Test");
     document.setRequesterEmail("tester@gmail.com");
     document.setIsDraft(true);
 
@@ -65,7 +65,14 @@ describe("AttachmentField", function () {
       name: 'My File',
       filePath: path.join(__dirname, 'raw.pdf'),
     });
+
+    var fileTwo = new File({
+      name: 'File number 2',
+      filePath: path.join(__dirname, 'raw.pdf'),
+    });
+
     document.appendFile(file);
+    document.appendFile(fileTwo);
 
     var attachmentField = new AttachmentField();
     attachmentField.setX(30);
@@ -83,12 +90,10 @@ describe("AttachmentField", function () {
       expect( doc.toObject() ).to.be.an.instanceof(Document);
       done();
     })
-    .catch(function(err) {
-      done(error)
+    .catch(function(error) {
+        console.error(error)
+        done(error)
     });
-  
   });
-
-  
 });
 

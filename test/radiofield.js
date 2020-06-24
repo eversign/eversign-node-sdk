@@ -18,7 +18,7 @@ var businessId = config.businessId;
 describe("RadioField", function () {
 
   it('should get added to a Document without a problem', function(done){
-    
+
     var document = new Document();
     document.setDocumentHash("My Document");
     document.setTitle("Title goes here");
@@ -45,7 +45,7 @@ describe("RadioField", function () {
   });
 
   it('should fail without a File', function(done){
-    
+
     var document = new Document();
     document.setDocumentHash("My Document");
     document.setTitle("Title goes here");
@@ -63,7 +63,7 @@ describe("RadioField", function () {
   });
 
   it('should fail without setting all required fields', function(done){
-    
+
     var document = new Document();
     document.setDocumentHash("My Document");
     document.setTitle("Title goes here");
@@ -85,7 +85,7 @@ describe("RadioField", function () {
   });
 
   it('should get uploaded without an error', function(done){
-    this.timeout(10000); 
+    this.timeout(10000);
 
     var document = new Document();
     document.setDocumentHash("My Document");
@@ -130,12 +130,12 @@ describe("RadioField", function () {
       expect( doc.toObject() ).to.be.an.instanceof(Document);
       done();
     })
-    .catch(function(err) {
+    .catch(function(error) {
       done(error)
     });
-  
+
   });
 
-  
+
 });
 

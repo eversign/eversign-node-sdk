@@ -18,7 +18,7 @@ var businessId = config.businessId;
 describe("DropdownField", function () {
 
   it('should get added to a Document without a problem', function(done){
-    
+
     var document = new Document();
     document.setDocumentHash("My Document");
     document.setTitle("Title goes here");
@@ -53,7 +53,7 @@ describe("DropdownField", function () {
 
 
   it('should fail without setting all required fields', function(done){
-    
+
     var document = new Document();
     document.setDocumentHash("My Document");
     document.setTitle("Title goes here");
@@ -69,14 +69,14 @@ describe("DropdownField", function () {
     var dropdownField = new DropdownField();
     dropdownField.setIdentifier("date_sign_1");
     dropdownField.setX(30);
-    
+
     expect(function () { document.appendFormField(dropdownField); }).to.throw();
     done();
   });
 
 
   it('should get uploaded without an error', function(done){
-    this.timeout(10000); 
+    this.timeout(10000);
 
     var document = new Document();
     document.setDocumentHash("My Document");
@@ -117,12 +117,10 @@ describe("DropdownField", function () {
       expect( doc.toObject() ).to.be.an.instanceof(Document);
       done();
     })
-    .catch(function(err) {
+    .catch(function(error) {
       done(error)
     });
-  
   });
 
-  
 });
 

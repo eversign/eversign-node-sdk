@@ -19,7 +19,7 @@ var businessId = config.businessId;
 describe("SignatureField", function () {
 
   it('should get added to a Document without a problem', function(done){
-    
+
     var document = new Document();
     document.setDocumentHash("My Document");
     document.setTitle("Title goes here");
@@ -48,7 +48,7 @@ describe("SignatureField", function () {
 
 
   it('should get uploaded without an error', function(done){
-    this.timeout(10000); 
+    this.timeout(30000);
 
     var document = new Document();
     document.setDocumentHash("My Document");
@@ -83,12 +83,12 @@ describe("SignatureField", function () {
       expect( doc.toObject() ).to.be.an.instanceof(Document);
       done();
     })
-    .catch(function(err) {
+    .catch(function(error) {
       done(error)
     });
-  
+
   });
 
-  
+
 });
 
