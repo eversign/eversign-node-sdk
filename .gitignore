@@ -38,3 +38,4 @@ build/
 examples/config.js
 examples/raw.pdf
 examples/final.pdf
+.vscode
