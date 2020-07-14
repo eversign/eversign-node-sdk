@@ -1,5 +1,6 @@
 'use strict';
 
+var fs = require('fs');
 var chai = require('chai');
 var Promise = require('bluebird');
 var should = chai.should();
@@ -134,5 +135,33 @@ describe('Document' , function functionName() {
         })
         .catch(done);
   });
+
+  it("should attach an file as base64", function (done) {
+    var document = new Document();
+    document.setDocumentHash("My Document");
+    document.setTitle("Title goes here");
+    document.setRequesterEmail("tester@gmail.com");
+    document.setIsDraft(false);
+
+    var signer = new Signer();
+    signer.setName('Tester Test');
+    signer.setEmail('tester@gmail.com')
+    document.appendSigner(signer.toObject());
+
+    var file = new File({
+      name: 'My File',
+      fileBase64: fs.readFileSync("raw.pdf").toString("base64"),
+    });
+    document.appendFile(file);
+
+    var client = new Client(key, businessId);
+    client.createDocument(document)
+      .then(function (response) {
+        expect( document.toObject() ).to.be.an.instanceof(Document);
+        expect( document.toObject().files ).to.be.an('array')
+        done()
+      })
+      .catch(done);
+});
 
 });
