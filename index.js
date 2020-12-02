@@ -20,6 +20,7 @@ module.exports = {
   SignatureField: require('./lib/SignatureField'),
   Signer: require('./lib/Signer'),
   TextField: require('./lib/TextField'),
+  CheckboxGroupField: require('./lib/CheckboxGroupField'),
   TextFormField: require('./lib/TextFormField'),
   OAuthTokenRequest: require('./lib/OAuthTokenRequest'),
 };
