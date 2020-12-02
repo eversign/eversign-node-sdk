@@ -1,6 +1,6 @@
 {
   "name": "eversign",
-  "version": "1.8.1",
+  "version": "1.8.2",
   "description": "Nodejs client for eversign api",
   "main": "index.js",
   "typings": "typings/index.d.ts",
