@@ -19,6 +19,7 @@ declare module 'eversign' {
     export import SignatureField = require('eversign/lib/SignatureField')
     export import Signer = require('eversign/lib/Signer')
     export import TextField = require('eversign/lib/TextField')
+    export import CheckboxGroupField = require('eversign/lib/CheckboxGroupField')
     export import TextFormField = require('eversign/lib/TextFormField')
     export import OAuthTokenRequest = require('eversign/lib/OAuthTokenRequest')
 
@@ -378,6 +379,14 @@ declare module 'eversign/lib/DateSignedField' {
     }
 
     export = DateSignedField
+}
+
+declare module 'eversign/lib/CheckboxGroupField' {
+    class CheckboxGroupField {
+
+    }
+
+    export = CheckboxGroupField
 }
 
 declare module 'eversign/lib/DocumentTemplate' {
