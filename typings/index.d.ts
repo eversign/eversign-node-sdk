@@ -148,7 +148,7 @@ declare module 'eversign/lib/Document' {
         public getExpires(): Date
         public getFields(): FormField[]
         public getFiles(): File[]
-        public getIsCanceled(): boolean
+        public getIsCancelled(): boolean
         public getIsCompleted(): boolean
         public getIsDeleted(): boolean
         public getIsDraft(): boolean
@@ -233,7 +233,7 @@ declare module 'eversign/lib/Document' {
             /**
              * Check if the document has been canceled.
              */
-            isCanceled: boolean,
+            isCancelled: boolean,
 
             /**
              *
