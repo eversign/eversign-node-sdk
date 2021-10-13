@@ -80,7 +80,7 @@ describe('Signer.toObject()' , function functionName() {
 
 describe('Document' , function functionName() {
 
-  it.skip("should get created without a problem", function (done) {
+  it("should get created without a problem", function (done) {
     var document = new Document();
     document.setDocumentHash("My Document");
     document.setTitle("Title goes here");
@@ -98,6 +98,12 @@ describe('Document' , function functionName() {
     signer.setEmail('tester@gmail.com')
     document.appendSigner(signer.toObject());
 
+    var file = new File({
+        name: 'My File',
+        filePath: path.join(__dirname, 'raw.pdf'),
+    });
+    document.appendFile(file);
+
     var client = new Client(key, businessId);
     client
         .createDocument(document)
@@ -108,7 +114,7 @@ describe('Document' , function functionName() {
         .catch(done);
   });
 
-  it.skip("should upload a file without a problem", function (done) {
+  it("should upload a file without a problem", function (done) {
       var document = new Document();
       document.setDocumentHash("My Document");
       document.setTitle("Title goes here");
@@ -150,7 +156,7 @@ describe('Document' , function functionName() {
 
     var file = new File({
       name: 'My File',
-      fileBase64: fs.readFileSync("raw.pdf").toString("base64"),
+      fileBase64: fs.readFileSync(__dirname+"/raw.pdf").toString("base64"),
     });
     document.appendFile(file);
 
