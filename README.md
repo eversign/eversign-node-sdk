@@ -233,10 +233,25 @@ client.cancelDocument(document);
 
 Any feedback? Please feel free to [contact our support team](https://eversign.com/contact).
 
-### Development
+## Development
+
+### Setting up environment
 
 ```
 docker run -ti --rm -p 8080:8080 -v $(pwd):/opt/sdk -w /opt/sdk node bash
 npm install
 node examples/create_document.js
 ```
+
+### Running tests
+```
+npm run test
+```
+
+### Publishing
+- Make sure our change is working and properly deployed to master branch.
+- Run tests with `npm run test`
+- Bump up version in package.json
+- Login to npm account with a permission to publish with `npm login`
+- Publish new version with `npm publish`
+- You will receive an email with confirmation that new package version is published.
