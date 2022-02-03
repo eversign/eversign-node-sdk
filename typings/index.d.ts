@@ -782,9 +782,12 @@ declare module 'eversign/lib/Signer' {
     class Signer {
         constructor(signerObject?: Partial<Signer.IObject>)
         getDeclined(): boolean
+        getDeliverEmail(): boolean
         getEmail(): string
         getEmbeddedSigningUrl(): string
         getId(): number
+        getLanguage(): string
+        getMessage(): string
         getName(): string
         getOrder(): number
         getPin(): number
@@ -793,12 +796,18 @@ declare module 'eversign/lib/Signer' {
         getSent(): boolean
         getSigned(): boolean
         getSignedTimestamp(): number
+        getSignerAuthenticationSmsEnabled(): boolean
+        getSignerAuthenticationPhoneNumber(): string
         getSigningUrl(): string
         getStatus(): Signer.STATUS
         getViewed(): boolean
         setDeclined(newDeclined: boolean): void
+        setDeliverEmail(newDeliverEmail: string): void
         setEmail(newEmail: string): void
+        setEmbeddedSigningUrl(newEmbeddedSigningUrl: string): void
         setId(newId: number): void
+        setLanguage(newLanguage: string): void
+        setMessage(newMessage: string): void
         setName(newName: string): void
         setOrder(newOrder: number): void
         setPin(newPin: number): void
@@ -807,6 +816,8 @@ declare module 'eversign/lib/Signer' {
         setSent(newSent: boolean): void
         setSigned(newSigned: boolean): void
         setSignedTimestamp(newSignedTimstamp: number): void
+        setSignerAuthenticationPhoneNumber(newSignerAuthenticationPhoneNumber: string): void
+        setSignerAuthenticationSmsEnabled(newSignerAuthenticationSmsEnabled: string): void
         setSigningUrl(newSigningUrl: string): void
         setStatus(newStatus: Signer.STATUS): void
         setViewed(newViewed: boolean): void
@@ -895,6 +906,27 @@ declare module 'eversign/lib/Signer' {
              * the embedded/iframe signing url
              */
             embeddedSigningUrl: string,
+            /**
+             * This parameter is only applicable if embedded_signing_enabled is set to 1.
+             * When this parameter is set, embedded document signers will be notified by email.
+             */
+            deliverEmail: boolean,
+            /**
+             * This parameter is used to specify if signer authentication by SMS is enabled.
+             */
+            signerAuthenticationSmsEnabled: boolean,       
+            /**
+             * If signer authentication by SMS is enabled, this parameter is used to specify the phone number to which SMS validation will be delivered. ITU call prefix can start both with 00 or + sign.
+             */
+            signerAuthenticationPhoneNumber: string,
+            /**
+             * This parameter can be used to specify a custom message (upon document delivery) for the current signer. Please note that for the current signer the general document message will be overriden by this parameter. 
+             */
+            message: string,
+            /**
+             * This parameter is used to specify the language in which signing notifications (emails), the document status page and the signature process will appear for this signer. 
+             */
+            language: undefined,
         }
     }
 
