@@ -74,7 +74,7 @@ To create a document based on an already created template you can use the class 
 ```javascript
 const template = new Template();
 template.setTemplateId('MY_TEMPLATE_ID');
-template.setTitle('Tile goes here');
+template.setTitle('Title goes here');
 template.setMessage('Test Message');
 ```
 
@@ -106,7 +106,7 @@ A document is created by instantiating the `Document` object and setting your pr
 
 ```javascript
 const document = new Document();
-document.setTitle('Tile goes here');
+document.setTitle('Title goes here');
 document.setMessage('My Message');
 ```
 

@@ -22,7 +22,7 @@ http.createServer(function(request, response) {
     console.log('run');
 
     var document = new Document();
-    document.setTitle("Tile goes here");
+    document.setTitle("Title goes here");
     document.setRequesterEmail("tester@gmail.com");
     document.setIsDraft(false);
     document.setRedirect('https://eversign.com/?success');
