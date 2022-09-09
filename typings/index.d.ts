@@ -802,7 +802,7 @@ declare module 'eversign/lib/Signer' {
         getStatus(): Signer.STATUS
         getViewed(): boolean
         setDeclined(newDeclined: boolean): void
-        setDeliverEmail(newDeliverEmail: string): void
+        setDeliverEmail(newDeliverEmail: boolean): void
         setEmail(newEmail: string): void
         setEmbeddedSigningUrl(newEmbeddedSigningUrl: string): void
         setId(newId: number): void
